@@ -33,6 +33,7 @@ const PageLayout: React.FC<IPageLayoutProps> = ({ icon, title, rightArea, childr
               {icon}
               {title}
             </div>
+            {rightArea}
           </div>
         </div>
       )}
