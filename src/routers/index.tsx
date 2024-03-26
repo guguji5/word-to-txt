@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import { dynamicPackages, Entry } from '@/utils';
-import StatusCard from '@/pages/status-card';
 const Packages = dynamicPackages();
 let lazyRoutes = Packages.reduce((result: any, module: Entry) => {
   return (result = result.concat(module.routes));
@@ -25,7 +24,6 @@ export default function Content() {
         {lazyRoutes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
         ))}
-        <Route exact path='/status-card' component={StatusCard} />
         <Route path='/' exact>
           <Redirect to='/demo' />
         </Route>

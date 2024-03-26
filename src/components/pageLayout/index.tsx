@@ -33,11 +33,6 @@ const PageLayout: React.FC<IPageLayoutProps> = ({ icon, title, rightArea, childr
               {icon}
               {title}
             </div>
-            <div className={'page-header-right-area'}>
-              <span className='avator' onClick={() => window.open('https://github.com/guguji5/awesome-react-components', '_blank')}>
-                <img src={'/image/github.png'} alt='' />
-              </span>
-            </div>
           </div>
         </div>
       )}

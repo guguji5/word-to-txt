@@ -3,7 +3,7 @@ import Demo from './demo';
 export default {
   routes: [
     {
-      path: '/demo',
+      path: '/word-to-txt',
       component: Demo,
       exact: true,
     },
