@@ -25,7 +25,7 @@ export default function Content() {
           <RouteWithSubRoutes key={i} {...route} />
         ))}
         <Route path='/' exact>
-          <Redirect to='/demo' />
+          <Redirect to='/word-to-txt' />
         </Route>
       </Switch>
     </div>
