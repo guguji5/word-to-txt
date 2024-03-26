@@ -8,26 +8,13 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
-    "@emotion/css": "^11.11.2",
-    "@fc-components/menu": "~1.1.21",
-    "@grafana/lezer-logql": "^0.2.2",
-    "@grafana/monaco-logql": "^0.0.7",
-    "@monaco-editor/react": "^4.6.0",
     "@svgr/core": "^5.5.0",
-    "@svgr/plugin-svgo": "^5.5.0",
     "antd": "4.17.4",
-    "classnames": "^2.3.1",
-    "d3": "^4.10.0",
-    "i18next": "^20.3.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-i18next": "^11.11.1",
-    "react-router-dom": "^5.2.0",
-    "react-spring": "9.4.5",
-    "react-use": "^17.3.1",
-    "uuid": "^9.0.1"
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@rollup/pluginutils": "^4.1.1",
