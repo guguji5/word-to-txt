@@ -52,12 +52,12 @@ export default function Demo() {
         <Form form={form} layout='vertical' className='h-100'>
           <Row gutter={16} style={{ height: '100%' }}>
             <Col span={12}>
-              <Form.Item label='请粘贴word内容' name='word' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }}>
+              <Form.Item label={<strong>请粘贴word内容</strong>} name='word' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }}>
                 <Input.TextArea placeholder={wordContent} />
               </Form.Item>
             </Col>
             <Col span={12}>
-              <Form.Item label='请粘贴txt内容' name='txt' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }}>
+              <Form.Item label={<strong>请粘贴txt内容</strong>} name='txt' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }}>
                 <Input.TextArea placeholder={txtContent} />
               </Form.Item>
             </Col>
@@ -66,7 +66,7 @@ export default function Demo() {
       </div>
       <Modal
         width={'80%'}
-        title={'txt变更记录'}
+        title='txt变更记录'
         visible={visible}
         onCancel={() => setVisible(false)}
         onOk={() => {

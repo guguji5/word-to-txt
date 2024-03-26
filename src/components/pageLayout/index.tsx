@@ -15,7 +15,7 @@ interface IPageLayoutProps {
 
 const PageLayout: React.FC<IPageLayoutProps> = ({ icon, title, rightArea, children, introIcon, customArea, showBack, headStyle, docFn }) => {
   return (
-    <div className={'page-wrapper'}>
+    <div className={'page-wrapper'} style={{ backgroundImage: 'linear-gradient(to bottom right,rgba(96,165,250,.4),rgba(192,132,252,.3),rgba(99,102,241,.3))' }}>
       {customArea ? (
         <div className={'page-top-header'}>{customArea}</div>
       ) : (
