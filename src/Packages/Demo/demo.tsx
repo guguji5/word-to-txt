@@ -53,7 +53,6 @@ export default function Demo() {
           <Row gutter={16} style={{ height: '100%' }}>
             <Col span={12}>
               <Form.Item
-                initialValue={wordContent}
                 label={<strong>请粘贴word内容</strong>}
                 name='word'
                 rules={[
@@ -85,7 +84,7 @@ export default function Demo() {
               </Form.Item>
             </Col>
             <Col span={12}>
-              <Form.Item label={<strong>请粘贴txt内容</strong>} name='txt' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }} initialValue={txtContent}>
+              <Form.Item label={<strong>请粘贴txt内容</strong>} name='txt' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }}>
                 <Input.TextArea placeholder={txtContent} />
               </Form.Item>
             </Col>
