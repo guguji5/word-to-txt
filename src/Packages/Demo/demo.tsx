@@ -52,12 +52,40 @@ export default function Demo() {
         <Form form={form} layout='vertical' className='h-100'>
           <Row gutter={16} style={{ height: '100%' }}>
             <Col span={12}>
-              <Form.Item label={<strong>请粘贴word内容</strong>} name='word' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }}>
+              <Form.Item
+                initialValue={wordContent}
+                label={<strong>请粘贴word内容</strong>}
+                name='word'
+                rules={[
+                  { required: true, message: '不可为空' },
+                  {
+                    validator(rule, value) {
+                      const enLineRegex = /^[0-9a-zA-Z\s,.]*$/;
+                      const zhLineRegex = /^[\u4e00-\u9fa5\s，。]*$/;
+                      const wordArr = value.split('\n');
+                      for (let i = 0; i < wordArr.length - 1; i++) {
+                        const contentI = wordArr[i];
+                        const contentNext = wordArr[i + 1];
+                        if (!contentI.startsWith('#') && !contentNext.startsWith('#')) {
+                          if (enLineRegex.test(contentI) && enLineRegex.test(contentNext)) {
+                            return Promise.reject('连续两行都是英文');
+                          }
+                          if (zhLineRegex.test(contentI) && zhLineRegex.test(contentNext)) {
+                            return Promise.reject('连续两行都是中文');
+                          }
+                        }
+                      }
+                      return Promise.resolve();
+                    },
+                  },
+                ]}
+                style={{ height: '100%' }}
+              >
                 <Input.TextArea placeholder={wordContent} />
               </Form.Item>
             </Col>
             <Col span={12}>
-              <Form.Item label={<strong>请粘贴txt内容</strong>} name='txt' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }}>
+              <Form.Item label={<strong>请粘贴txt内容</strong>} name='txt' rules={[{ required: true, message: '不可为空' }]} style={{ height: '100%' }} initialValue={txtContent}>
                 <Input.TextArea placeholder={txtContent} />
               </Form.Item>
             </Col>
